@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freelancer Expense Tracker</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Freelancer Expense Tracker</h1>
+      <p class="subtitle">Track business expenses. Know your true net income. Never miss a deductible.</p>
+    </header>
+
+    <!-- Add expense form -->
+    <section class="card add-form">
+      <h2>Add Expense</h2>
+      <form id="expense-form" novalidate>
+        <div class="row">
+          <div class="field">
+            <label>Amount (₹)</label>
+            <input type="number" step="0.01" min="0" name="amount" id="amount" placeholder="0.00" required>
+          </div>
+          <div class="field">
+            <label>Category</label>
+            <select name="category" id="category" required>
+              <option value="">Select category</option>
+              <option>Software &amp; Subscriptions</option>
+              <option>Office Supplies</option>
+              <option>Marketing &amp; Ads</option>
+              <option>Professional Services</option>
+              <option>Travel &amp; Meals</option>
+              <option>Utilities</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Description</label>
+            <input type="text" name="description" id="description" placeholder="e.g. AWS hosting, domain renewal">
+          </div>
+          <div class="field">
+            <label>Date</label>
+            <input type="date" name="expense_date" id="expense_date" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Expense</button>
+        <div id="form-error" class="error-msg"></div>
+      </form>
+    </section>
+
+    <!-- Summary -->
+    <section class="card summary" id="summary-section">
+      <h2>Summary</h2>
+      <div class="summary-grid" id="summary-grid">
+        <!-- populated by JS -->
+      </div>
+    </section>
+
+    <!-- Expense list -->
+    <section class="card list-section">
+      <h2>Expenses <span id="expense-count">0</span></h2>
+      <div class="table-wrap" id="table-wrap">
+        <table id="expenses-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th class="numeric">Amount (₹)</th>
+              <th class="numeric actions">Action</th>
+            </tr>
+          </thead>
+          <tbody id="expenses-body">
+            <!-- rows populated by JS -->
+          </tbody>
+        </table>
+      </div>
+      <div id="empty-state" class="empty-state" style="display:none;">
+        No expenses yet. Add your first one above.
+      </div>
+    </section>
+
+    <footer>
+      <p>Built as a product-builder project — solving a real freelancer problem, not just writing code.</p>
+    </footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
