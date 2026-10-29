@@ -56,7 +56,7 @@ python app.py
 
 The first run creates `expenses.db` automatically. Data persists on your machine.
 
-## What I'd build next (if this were a real product)
+What I'd build next (if this were a real product)
 
 - CSV export for your accountant
 - Monthly/quarterly views and trends
@@ -64,8 +64,3 @@ The first run creates `expenses.db` automatically. Data persists on your machine
 - Multi-currency support for international clients
 - Reminder: "log this week's expenses" every Friday
 
-These are *product* decisions driven by customer conversations, not feature checklists — the same mindset I'd bring to this role.
-
----
-
-*Built as a project aligned with the Trilogy Innovation "Innovation Catalyst" SDE Intern role: solve a real customer problem, own the outcome, be fluent in the "why."*
